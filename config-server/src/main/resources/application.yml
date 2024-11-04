@@ -12,3 +12,8 @@ spring:
           uri: https://github.com/Sokkhann/configuration-managements.git
           default-label: main
           search-paths: '/yelp-config/services/**' #this is for search paths
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://user:password@localhost:8761/eureka/
+

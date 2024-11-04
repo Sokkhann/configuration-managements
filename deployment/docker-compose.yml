@@ -1,0 +1,52 @@
+services:
+  #postgres database
+  #database for microservice
+  postgres:
+    container_name: "yelp-postgres"
+    image: "debezium/postgres:16-alpine"
+    ports:
+      - "5168:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234
+    networks:
+      - yelp-network
+  #pg admin dashboard
+  pgadmin:
+    container_name: pgadmin-container
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
+  #database for mongo
+  mongodb:
+    image: "mongo:7.0.12-rc1-jammy"
+    container_name: "yelp-mongodb"
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=sokkhann
+      - MONGO_INITDB_ROOT_PASSWORD=1234
+    networks:
+      - yelp-network
+  #database for oauth2
+  postgres-oauth2:
+    container_name: "yelp-postgres-oauth2"
+    image: "debezium/postgres:16-alpine"
+    ports:
+      - "5169:5432"
+    environment:
+      - POSTGRES_USER=oauth2
+      - POSTGRES_PASSWORD=oauth2
+      - POSTGRES_DB=oauth2
+    networks:
+      - yelp-network
+
+volumes:
+  service-db-vol:
+
+networks:
+  yelp-network:

@@ -1,3 +1,5 @@
+server:
+  port: 8888
 spring:
   application:
     name: config-server
@@ -9,6 +11,4 @@ spring:
         git:
           uri: https://github.com/Sokkhann/configuration-managements.git
           default-label: main
-          search-paths: '/yelp-config/**' #this is for search paths
-server:
-  port: 8888
+          search-paths: '/yelp-config/services/**' #this is for search paths

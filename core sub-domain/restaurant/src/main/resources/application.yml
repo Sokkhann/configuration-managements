@@ -1,8 +1,8 @@
 server:
-  port: 8081
+  port: 8083
 spring:
   application:
-    name: business
+    name: restaurant
   jpa:
     hibernate:
       ddl-auto: create-drop
@@ -17,3 +17,4 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://user:password@localhost:8761/eureka/
+

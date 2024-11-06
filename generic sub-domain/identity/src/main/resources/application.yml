@@ -5,7 +5,7 @@ spring:
     name: identity
   profiles:
     active: dev
-  # config server
+  # config server(8888 is the port of config server)
   config:
     import: "configserver:http://localhost:8888"
 # for eureka service (service registry and discovery)

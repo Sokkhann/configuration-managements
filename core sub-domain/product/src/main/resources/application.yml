@@ -7,7 +7,7 @@ spring:
     active: dev
   # config server(8888 is the port of config server)
   config:
-    import: "configserver:https://localhost:8888"
+    import: "configserver:http://localhost:8888"
 # for eureka service (service registry and discovery)
 eureka:
   client:

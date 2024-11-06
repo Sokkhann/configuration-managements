@@ -3,15 +3,11 @@ server:
 spring:
   application:
     name: product
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
-  datasource:
-    url: jdbc:postgresql://localhost:5432/db_name
-    username: postgres
-    password: 1234
-    driver-class-name: org.postgresql.Driver
-
+  profiles:
+    active: dev
+  # config server(8888 is the port of config server)
+  config:
+    import: "configserver:https://localhost:8888"
 # for eureka service (service registry and discovery)
 eureka:
   client:

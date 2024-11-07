@@ -6,6 +6,12 @@ spring:
   # config server(8888 is the port of config server)
   config:
     import: "configserver:http://localhost:8888"
+# expose actuator endpoint
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 # for eureka service (service registry and discovery)
 eureka:
   client:

@@ -1,10 +1,11 @@
+server:
+  port: 9090
 identity:
   info: "This is identity development"
-  
 spring:
   data:
     mongodb:
       uri: mongodb://localhost:27017/oauth2_db 
       database: oauth2_db                      
       username: sokkhann                   
-      password: 1234 
+      password: 1234
